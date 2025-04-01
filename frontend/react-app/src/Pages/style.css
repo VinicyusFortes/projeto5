@@ -1,5 +1,9 @@
-/* Criar-conta */
+/* Global */
+a {
+  text-decoration: none !important;
+}
 
+/* Criar-conta */
 .card { 
   max-Width: 600px;
   min-width: 300px;
@@ -25,11 +29,6 @@
 .footer {
   height: 400px;
 }
-
-.teste {
-  border: 1px solid red;
-}
-
 
 
 /* Media Queries */

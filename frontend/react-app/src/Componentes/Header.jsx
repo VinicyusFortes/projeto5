@@ -24,11 +24,11 @@ const Header = () => {
             />
           </a>
           <p className="m-4">
-            Bem vindo, <a href="#">user</a>
+            Bem vindo, <a href="#"><span className="text-success">user</span></a>
           </p>
           <a href="#" className="icone text-dark me-3">
+            <span className="m-1">Conta</span>
             <i class="fa-solid fa-user"></i>
-            <span>Conta</span>
           </a>
           <a href="#" className="icone text-dark me-3">
             <span className="m-1">Chat</span>

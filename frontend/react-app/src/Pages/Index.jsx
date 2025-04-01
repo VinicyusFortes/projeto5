@@ -37,31 +37,35 @@ function Index() {
           <div className="row">
             {/* Exemplo de um card de produto */}
             <div className="col-md-4 mb-4">
-              <div className="card h-100">
-                <img
-                  src="https://via.placeholder.com/150"
-                  className="card-img-top"
-                  alt="Imagem do produto"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Nome do Produto</h5>
-                  <p className="card-text">R$ 100,00</p>
+              <a href="#">
+                <div className="card h-100">
+                  <img
+                    src="https://via.placeholder.com/150"
+                    className="card-img-top"
+                    alt="Imagem do produto"
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">Nome do Produto</h5>
+                    <p className="card-text">R$ 100,00</p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
             {/* Exemplo de mais cards de produtos */}
             <div className="col-md-4 mb-4">
-              <div className="card h-100">
-                <img
-                  src="https://via.placeholder.com/150"
-                  className="card-img-top"
-                  alt="Imagem do produto"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Nome do Produto 2</h5>
-                  <p className="card-text">R$ 200,00</p>
+              <a href="">
+                <div className="card h-100">
+                  <img
+                    src="https://via.placeholder.com/150"
+                    className="card-img-top"
+                    alt="Imagem do produto"
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">Nome do Produto 2</h5>
+                    <p className="card-text">R$ 200,00</p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
             
           </div>
