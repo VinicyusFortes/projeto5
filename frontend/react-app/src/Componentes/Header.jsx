@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css"; 
+import "../Pages/style.css";
 
 const Header = () => {
   return (
@@ -15,15 +16,19 @@ const Header = () => {
           />
         </a>
         <div className="d-flex align-items-center">
+          <p className="m-3">
+            Bem vindo, <a href="#">user</a>
+          </p>
+          <a href="#" className="icone text-dark me-3">
+            <i class="fa-solid fa-user"></i>
+          </a>
           <a href="#" className="icone text-dark me-3">
             <i class="fa-solid fa-message"></i>
           </a>
           <a href="#" className="icone text-dark me-3">
             <i class="fa-solid fa-bell"></i>
           </a>
-          <a href="#" className="icone text-dark me-3">
-            <i class="fa-solid fa-user"></i>
-          </a>
+
           <a href="#" className="icone text-dark me-3">
             <i class="fa-solid fa-globe"></i>
           </a>
