@@ -12,6 +12,14 @@
   transition: all 250ms;
 }
 
+.imagem-perfil-header {  
+  border: 2px solid rgb(160, 197, 67);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  
+}
+
 /* Footer */
 
 .footer {

@@ -6,8 +6,8 @@ function Index() {
   return (
     <div className="container mt-5">
       {/* Barra de Pesquisa */}
-      <div className="row mb-4">
-        <div className="col-12">
+      <div className="row mb-4 d-flex justify-content-center">
+        <div className="col-8">
           <div className="input-group">
             <span className="input-group-text">
               <i className="fa fa-search"></i>
@@ -21,7 +21,7 @@ function Index() {
         </div>
       </div>
 
-      <div className="row">
+      <div className="row mt-5">
         {/* Categorias */}
         <div className="col-md-3 mb-4">
           <h5>Categorias</h5>
