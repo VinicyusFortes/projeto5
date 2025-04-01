@@ -36,9 +36,34 @@ function Login() {
                   />
                 </div>
               </div>
-              <button type="submit" className="btn btn-primary w-100 mt-auto">
-                Login
-              </button>
+              <div className="row d-flex center justify-content-center mt-3">
+                <div className="col-4">
+                  <button
+                    type="submit"
+                    className="btn btn-primary w-100 mt-auto"
+                  >
+                    Login
+                  </button>
+                </div>
+
+                <div className="col-4">
+                  <button
+                    type="submit"
+                    className="btn btn-outline-primary w-100 mt-auto"
+                  >
+                    Registar
+                  </button>
+                </div>
+              </div>
+              <div className="row d-flex justify-content-center">
+                <div className="col-4">
+                  <div className="mt-2">
+                    <p>
+                      <a href="#">Esqueceu sua senha?</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </form>
           </div>
         </div>
