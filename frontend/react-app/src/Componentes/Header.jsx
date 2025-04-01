@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="bg-light shadow-sm p-3">
       <div className="container d-flex justify-content-between align-items-center">
-        <a href="/" className="logo">
+        <a href="/index" className="logo">
           <img
             src="https://via.placeholder.com/150" //FIX ME: Substitua pela URL da sua imagem
             alt="Logo"

@@ -10,6 +10,7 @@ import CriarConta from './Pages/CriarConta';
 import Footer from './Componentes/Footer';
 import Header from './Componentes/Header';
 import Login from './Pages/Login';
+import Index from './Pages/Index';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,7 +18,7 @@ root.render(
     <Router>
       <Header />
       <Routes>
-        <Route index element={<CriarConta />} />
+        <Route index path="/index" element={<Index />} />
         <Route path="/criarconta" element={<CriarConta />} />
         <Route path="/login" element={<Login />} />
       </Routes>
