@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
+
+import CriarConta from './Pages/CriarConta';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>
+        <Route index element={<CriarConta />} />
+        <Route path="/criarconta" element={<CriarConta />} />
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 
