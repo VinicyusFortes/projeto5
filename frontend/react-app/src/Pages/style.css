@@ -1,4 +1,11 @@
 .card { 
-  max-Width: 400px;
+  max-Width: 600px;
+  min-width: 300px;
   width: 100%;
+}
+
+@media (max-width: 300px) {
+  .card {
+    width: 300px !important;
+  }
 }
