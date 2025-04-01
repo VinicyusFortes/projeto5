@@ -4,9 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function CriarConta() {
   return (
     <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div
-        className="card shadow-lg"
-      >
+      <div className="card shadow-lg">
         <div className="card-body">
           <h2 className="text-center mb-4">Registo</h2>
           <form>
@@ -36,14 +34,14 @@ function CriarConta() {
                 />
               </div>
               <div className="col-md-6 mb-3">
-                <label htmlFor="firstName" className="form-label">
-                  Primeiro Nome
+                <label htmlFor="email" className="form-label">
+                  Email
                 </label>
                 <input
-                  type="text"
+                  type="email"
                   className="form-control"
-                  id="firstName"
-                  placeholder="Digite seu primeiro nome"
+                  id="email"
+                  placeholder="Digite seu email"
                   required
                 />
               </div>
@@ -62,14 +60,14 @@ function CriarConta() {
                 />
               </div>
               <div className="col-md-6 mb-3">
-                <label htmlFor="email" className="form-label">
-                  Email
+                <label htmlFor="firstName" className="form-label">
+                  Primeiro Nome
                 </label>
                 <input
-                  type="email"
+                  type="text"
                   className="form-control"
-                  id="email"
-                  placeholder="Digite seu email"
+                  id="firstName"
+                  placeholder="Digite seu primeiro nome"
                   required
                 />
               </div>
