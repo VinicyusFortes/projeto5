@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "font-awesome/css/font-awesome.min.css"; // Importando Font Awesome
+import "font-awesome/css/font-awesome.min.css"; 
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
       <div className="container d-flex justify-content-between align-items-center">
         <a href="/" className="logo">
           <img
-            src="https://via.placeholder.com/150" // Substitua pela URL da sua imagem
+            src="https://via.placeholder.com/150" //FIX ME: Substitua pela URL da sua imagem
             alt="Logo"
             className="img-fluid"
             style={{ maxHeight: "50px" }}

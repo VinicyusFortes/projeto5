@@ -9,6 +9,7 @@ import { Route, Routes } from "react-router-dom";
 import CriarConta from './Pages/CriarConta';
 import Footer from './Componentes/Footer';
 import Header from './Componentes/Header';
+import Login from './Pages/Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
       <Routes>
         <Route index element={<CriarConta />} />
         <Route path="/criarconta" element={<CriarConta />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </Router>

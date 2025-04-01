@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function CriarConta() {
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100">
+    <div className="container d-flex justify-content-center align-items-center mt-5">
       <div className="card shadow-lg">
         <div className="card-body">
           <h2 className="text-center mb-4">Registo</h2>
