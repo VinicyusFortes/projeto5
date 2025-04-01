@@ -6,7 +6,6 @@ const Header = () => {
   return (
     <header className="bg-light shadow-sm p-3">
       <div className="container d-flex justify-content-between align-items-center">
-        {/* Logo - Imagem clicável */}
         <a href="/" className="logo">
           <img
             src="https://via.placeholder.com/150" // Substitua pela URL da sua imagem
@@ -15,22 +14,18 @@ const Header = () => {
             style={{ maxHeight: "50px" }}
           />
         </a>
-
-        {/* Ícones */}
         <div className="d-flex align-items-center">
-          {/* Ícone de Chat */}
-          <a href="#" className="text-dark me-3">
+          <a href="#" className="icone text-dark me-3">
             <i class="fa-solid fa-message"></i>
           </a>
-
-          {/* Ícone de Notificações */}
-          <a href="#" className="text-dark me-3">
+          <a href="#" className="icone text-dark me-3">
             <i class="fa-solid fa-bell"></i>
           </a>
-
-          {/* Ícone de Perfil com o novo ícone "fa-user-tie" */}
-          <a href="#" className="text-dark">
+          <a href="#" className="icone text-dark me-3">
             <i class="fa-solid fa-user"></i>
+          </a>
+          <a href="#" className="icone text-dark me-3">
+            <i class="fa-solid fa-globe"></i>
           </a>
         </div>
       </div>

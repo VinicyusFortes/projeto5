@@ -1,7 +1,15 @@
+/* Criar-conta */
+
 .card { 
   max-Width: 600px;
   min-width: 300px;
   width: 100%;
+}
+
+/* Header.jsx */
+.icone:hover {
+  border-bottom: 1px solid green;
+  transition: all 250ms;
 }
 
 
