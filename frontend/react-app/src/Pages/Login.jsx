@@ -47,19 +47,19 @@ function Login() {
                 </div>
 
                 <div className="col-4">
-                  <button
-                    type="submit"
-                    className="btn btn-outline-primary w-100 mt-auto"
-                  >
-                    Registar
-                  </button>
+                    <a
+                      href="criarconta"
+                      className="btn btn-outline-primary w-100 mt-auto"
+                    >
+                      Registar
+                    </a>
                 </div>
               </div>
               <div className="row d-flex justify-content-center">
                 <div className="col-4">
                   <div className="mt-2">
                     <p>
-                      <a href="#">Esqueceu sua senha?</a>
+                      <a href="/criarconta">Esqueceu sua senha?</a>
                     </p>
                   </div>
                 </div>
