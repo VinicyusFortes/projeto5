@@ -4,8 +4,19 @@
   width: 100%;
 }
 
+
+
+
+/* Media Queries */
+
 @media (max-width: 300px) {
   .card {
     width: 300px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer .col-md-4 {
+    margin-bottom: 1rem;
   }
 }

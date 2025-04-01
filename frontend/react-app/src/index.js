@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Route, Routes } from "react-router-dom";
 
 import CriarConta from './Pages/CriarConta';
+import Footer from './Componentes/Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
         <Route index element={<CriarConta />} />
         <Route path="/criarconta" element={<CriarConta />} />
       </Routes>
+      <Footer/>
     </Router>
   </React.StrictMode>
 );
