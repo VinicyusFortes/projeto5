@@ -8,37 +8,62 @@ function Footer() {
             <ul className="list-unstyled">
               <li>
                 <a href="#" className="text-white">
-                  Nossa História
+                  Trabalhe Connosco
                 </a>
               </li>
+
               <li>
                 <a href="#" className="text-white">
                   Nossa Missão
                 </a>
               </li>
-            </ul>
-          </div>
-          <div className="col-md-4 mb-3">
-            <h5>Política de Privacidade</h5>
-            <ul className="list-unstyled">
+
               <li>
                 <a href="#" className="text-white">
-                  Política de Privacidade
+                  Apoie-nos
                 </a>
               </li>
             </ul>
           </div>
           <div className="col-md-4 mb-3">
-            <h5>Outros Links</h5>
+            <h5>Suporte</h5>
             <ul className="list-unstyled">
               <li>
                 <a href="#" className="text-white">
-                  Trabalhe Conosco
+                  Contacto
                 </a>
               </li>
+
+              <li>
+                <a href="#" className="text-white">
+                  Segurança
+                </a>
+              </li>
+
               <li>
                 <a href="#" className="text-white">
                   Livro de Reclamações
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="col-md-4 mb-3">
+            <h5>Dúvidas</h5>
+            <ul className="list-unstyled">
+              <li>
+                <a href="#" className="text-white">
+                  Como comprar
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-white">
+                  Taxas
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-white">
+                  Política de privacidade
                 </a>
               </li>
             </ul>
