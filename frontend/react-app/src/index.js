@@ -11,6 +11,7 @@ import Footer from './Componentes/Footer';
 import Header from './Componentes/Header';
 import Login from './Pages/Login';
 import Index from './Pages/Index';
+import Perfil from './Pages/Perfil';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,6 +22,7 @@ root.render(
         <Route index path="/index" element={<Index />} />
         <Route path="/criarconta" element={<CriarConta />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/perfil" element={<Perfil/>} />
       </Routes>
       <Footer />
     </Router>

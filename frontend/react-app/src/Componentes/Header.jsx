@@ -16,7 +16,7 @@ const Header = () => {
           />
         </a>
         <div className="d-flex align-items-center">
-          <a href="#">
+          <a href="/perfil">
             <img
               className="imagem-perfil-header"
               src="https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001884.png"
@@ -24,9 +24,9 @@ const Header = () => {
             />
           </a>
           <p className="m-4">
-            Bem vindo, <a href="#"><span className="text-success">user</span></a>
+            Bem vindo, <a href="/perfil"><span className="text-success">user</span></a>
           </p>
-          <a href="#" className="icone text-dark me-3">
+          <a href="/perfil" className="icone text-dark me-3">
             <span className="m-1">Conta</span>
             <i class="fa-solid fa-user"></i>
           </a>
