@@ -8,16 +8,18 @@ import { Route, Routes } from "react-router-dom";
 
 import CriarConta from './Pages/CriarConta';
 import Footer from './Componentes/Footer';
+import Header from './Componentes/Header';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
+      <Header />
       <Routes>
         <Route index element={<CriarConta />} />
         <Route path="/criarconta" element={<CriarConta />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </Router>
   </React.StrictMode>
 );
