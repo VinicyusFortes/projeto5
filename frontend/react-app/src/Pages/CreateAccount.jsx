@@ -81,9 +81,10 @@ function CreateAccount() {
      }
 
      try {
-       const response = await Service.registerUser(userData);
-       alert("Usuário criado com sucesso");
-       navigate("/login");
+       const verificationToken = await Service.registerUser(userData);
+
+       alert("User criado com sucesso. Por favor acesse o console para ativar conta.");
+       console.log("token: ", verificationToken);
      } catch (error) {
        alert("erro ao criar conta");
        console.error(error);

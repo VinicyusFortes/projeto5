@@ -72,7 +72,9 @@ export const Service = {
         throw new Error("Erro ao criar usuário");
       }
 
-      return true;
+      const responseData = await response.text();
+
+      return responseData;
     } catch (err) {
       throw new Error(err.message);
     }
