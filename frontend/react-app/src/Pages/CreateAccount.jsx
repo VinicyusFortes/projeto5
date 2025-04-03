@@ -16,7 +16,7 @@ function CreateAccount() {
     confirmPassword: "",
     email: "",
     phone: "",
-    userType: "false",
+    userType: "",
   });
 
   const handleChange = (event) => {
@@ -31,13 +31,23 @@ function CreateAccount() {
           [name]: formattedValue,
         }));
       }
+    } else if (name === "userType") {
+      // Lógica para alterar o valor do 'userType' para "true" ou "false"
+      const updatedValue = value === "normal" ? "false" : "true"; // Se for "normal", passa "false"; caso contrário, passa "true"
+      console.log("Valor do tipo de usuário selecionado:", updatedValue); // Exibe no console o valor selecionado
+
+      setInputs((prev) => ({
+        ...prev,
+        [name]: updatedValue, // Atualiza o valor de userType com "false" ou "true"
+      }));
     } else {
       setInputs((prev) => ({
         ...prev,
-        [name]: value,
+        [name]: value, // Atualiza os outros campos normalmente
       }));
     }
   };
+
 
    const handleCreateUser = async (userData) => {
      // Verifica se todos os campos obrigatórios estão preenchidos
@@ -190,7 +200,14 @@ function CreateAccount() {
                 <label htmlFor="userType" className="form-label">
                   Tipo de Usuário
                 </label>
-                <select className="form-select" id="userType" name ="userType" value={inputs.userType} onChange={handleChange} required>
+                <select
+                  className="form-select"
+                  id="userType"
+                  name="userType"
+                  value={inputs.userType === "false" ? "normal" : "admin"}
+                  onChange={handleChange}
+                  required
+                >
                   <option value="">Selecione...</option>
                   <option value="admin">Administrador</option>
                   <option value="normal">Normal</option>

@@ -8,7 +8,7 @@ import { Route, Routes } from "react-router-dom";
 import Footer from './Components/Footer';
 import Header from './Components/Header';
 import Login from './Pages/Login';
-import Index from './Pages/Index';
+import Home from './Pages/Home';
 import CreateAccount from './Pages/CreateAccount';
 import Profile from './Pages/Profile';
 
@@ -19,7 +19,7 @@ root.render(
     <Router>
       <Header />
       <Routes>
-        <Route index path="/index" element={<Index />} />
+        <Route index path="/home" element={<Home />} />
         <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile/>} />

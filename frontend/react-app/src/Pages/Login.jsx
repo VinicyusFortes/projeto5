@@ -29,7 +29,7 @@ function Login() {
     sessionStorage.setItem("token", token);
 
     alert("login feito com sucesso!");
-    navigate("/index");
+    navigate("/home");
 
 
   } catch(error) {

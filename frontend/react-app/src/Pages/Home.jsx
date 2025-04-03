@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 
-function Index() {
+function Home() {
   return (
     <div className="container mt-5">
       {/* Barra de Pesquisa */}
@@ -75,4 +75,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default Home;

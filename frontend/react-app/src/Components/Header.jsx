@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="bg-light shadow-sm p-3">
       <div className="container d-flex justify-content-between align-items-center">
-        <a href="/index" className="logo">
+        <a href="/home" className="logo">
           <img
             src="https://emilyroachwellness.com/wp-content/uploads/2012/11/242Reuse00.jpg" 
             alt="Logo"
