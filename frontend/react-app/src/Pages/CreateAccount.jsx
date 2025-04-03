@@ -1,13 +1,96 @@
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Service } from "../Services/Services";
 
-function CriarConta() {
+function CreateAccount() {
+  const navigate = useNavigate();
+
+  const [inputs, setInputs] = useState({
+    photo: "",
+    firstName: "",
+    lastName: "",
+    username: "",
+    password: "",
+    confirmPassword: "",
+    email: "",
+    phone: "",
+    userType: "false",
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    if (name === "phone") {
+      // Permite apenas números e limita a 9 caracteres
+      const formattedValue = value.replace(/\D/g, ""); // Remove qualquer caractere não numérico
+      if (formattedValue.length <= 9) {
+        setInputs((prev) => ({
+          ...prev,
+          [name]: formattedValue,
+        }));
+      }
+    } else {
+      setInputs((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
+  };
+
+   const handleCreateUser = async (userData) => {
+     // Verifica se todos os campos obrigatórios estão preenchidos
+     if (
+       userData.photo.trim() === "" ||
+       userData.firstName.trim() === "" ||
+       userData.lastName.trim() === "" ||
+       userData.username.trim() === "" ||
+       userData.password.trim() === "" ||
+       userData.confirmPassword.trim() === "" ||
+       userData.email.trim() === "" ||
+       userData.phone.trim() === "" ||
+       userData.userType.trim() === ""
+     ) {
+       alert("Todos os campos são obrigaórios!");
+       return;
+     }
+
+     // Verifica se as senhas coincidem
+     if (userData.password !== userData.confirmPassword) {
+       alert("As senhas não coincidem!");
+       return;
+     }
+
+     //verificao do campo do telefone
+     const phoneRegex = /^\d{9}$/;
+
+     if (!phoneRegex.test(userData.phone)) {
+       alert("O número de telefone deve conter exatamente 9 dígitos.");
+       return;
+     }
+
+     try {
+       const response = await Service.registerUser(userData);
+       alert("Usuário criado com sucesso");
+       navigate("/login");
+     } catch (error) {
+       alert("erro ao criar conta");
+       console.error(error);
+     }
+   };
+
+   const handleSubmit = (event) => {
+     event.preventDefault();
+     handleCreateUser(inputs);
+   };
+
   return (
     <div className="container d-flex justify-content-center align-items-center mt-5">
       <div className="card shadow-lg">
         <div className="card-body">
           <h2 className="text-center mb-4">Registo</h2>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="profileImage" className="form-label">
                 Imagem de Perfil (URL)
@@ -16,8 +99,11 @@ function CriarConta() {
                 type="url"
                 className="form-control"
                 id="profileImage"
+                name="photo"
                 placeholder="Cole a URL da imagem"
                 required
+                value={inputs.photo}
+                onChange={handleChange}
               />
             </div>
             <div className="row">
@@ -29,8 +115,11 @@ function CriarConta() {
                   type="text"
                   className="form-control"
                   id="username"
+                  name="username"
                   placeholder="Digite seu username"
                   required
+                  value={inputs.username}
+                  onChange={handleChange}
                 />
               </div>
               <div className="col-md-6 mb-3">
@@ -41,8 +130,11 @@ function CriarConta() {
                   type="email"
                   className="form-control"
                   id="email"
+                  name="email"
                   placeholder="Digite seu email"
                   required
+                  value={inputs.email}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -55,8 +147,11 @@ function CriarConta() {
                   type="text"
                   className="form-control"
                   id="lastName"
+                  name="lastName"
                   placeholder="Digite seu último nome"
                   required
+                  value={inputs.lastName}
+                  onChange={handleChange}
                 />
               </div>
               <div className="col-md-6 mb-3">
@@ -67,8 +162,11 @@ function CriarConta() {
                   type="text"
                   className="form-control"
                   id="firstName"
+                  name="firstName"
                   placeholder="Digite seu primeiro nome"
                   required
+                  value={inputs.firstName}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -81,15 +179,18 @@ function CriarConta() {
                   type="tel"
                   className="form-control"
                   id="phone"
+                  name="phone"
                   placeholder="Digite seu número de telemóvel"
                   required
+                  value={inputs.phone}
+                  onChange={handleChange}
                 />
               </div>
               <div className="col-md-6 mb-3">
                 <label htmlFor="userType" className="form-label">
                   Tipo de Usuário
                 </label>
-                <select className="form-select" id="userType" required>
+                <select className="form-select" id="userType" name ="userType" value={inputs.userType} onChange={handleChange} required>
                   <option value="">Selecione...</option>
                   <option value="admin">Administrador</option>
                   <option value="normal">Normal</option>
@@ -105,8 +206,11 @@ function CriarConta() {
                   type="password"
                   className="form-control"
                   id="password"
+                  name="password"
                   placeholder="Digite sua senha"
                   required
+                  value={inputs.password}
+                  onChange={handleChange}
                 />
               </div>
               <div className="col-md-6 mb-3">
@@ -117,8 +221,11 @@ function CriarConta() {
                   type="password"
                   className="form-control"
                   id="confirmPassword"
+                  name="confirmPassword"
                   placeholder="Confirme sua senha"
                   required
+                  value={inputs.confirmPassword}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -131,4 +238,4 @@ function CriarConta() {
     </div>
   );
 }
-export default CriarConta;
+export default CreateAccount;

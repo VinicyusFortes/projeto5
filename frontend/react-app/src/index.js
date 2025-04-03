@@ -5,13 +5,13 @@ import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Route, Routes } from "react-router-dom";
-
-import CriarConta from './Pages/CriarConta';
-import Footer from './Componentes/Footer';
-import Header from './Componentes/Header';
+import Footer from './Components/Footer';
+import Header from './Components/Header';
 import Login from './Pages/Login';
 import Index from './Pages/Index';
-import Perfil from './Pages/Perfil';
+import CreateAccount from './Pages/CreateAccount';
+import Profile from './Pages/Profile';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,9 +20,9 @@ root.render(
       <Header />
       <Routes>
         <Route index path="/index" element={<Index />} />
-        <Route path="/criarconta" element={<CriarConta />} />
+        <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/perfil" element={<Perfil/>} />
+        <Route path="/profile" element={<Profile/>} />
       </Routes>
       <Footer />
     </Router>

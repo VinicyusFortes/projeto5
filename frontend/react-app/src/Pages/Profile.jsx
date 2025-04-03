@@ -1,4 +1,4 @@
-function Perfil(){
+function Profile(){
   return (
     <div className="container mt-5">
       <div className="row justify-content-center">
@@ -67,4 +67,4 @@ function Perfil(){
   );
 }
 
-export default Perfil;
+export default Profile;
