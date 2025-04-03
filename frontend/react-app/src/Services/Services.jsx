@@ -80,6 +80,31 @@ export const Service = {
     }
   },
 
+  //ativa a conta de um user
+  async verifyUserAccount (token) {
+  try {
+    const response = await fetch(`${BASE_URL}/users/verify?token=${token}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+
+    if (response.ok) {
+      alert("Conta verificada com sucesso!");
+      // Redirecionar para a página de login
+      window.location.href = "/login"; 
+    } else {
+      alert(data.message || "Erro ao verificar a conta.");
+    }
+  } catch (error) {
+    console.error("Erro ao verificar conta:", error);
+    alert("Erro ao verificar a conta.");
+  }
+}
+  ,
+
   //USER
   //Funcao para buscar todos os usuários
   async fetchUsers(token) {

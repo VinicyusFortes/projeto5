@@ -83,8 +83,15 @@ function CreateAccount() {
      try {
        const verificationToken = await Service.registerUser(userData);
 
-       alert("User criado com sucesso. Por favor acesse o console para ativar conta.");
-       console.log("token: ", verificationToken);
+       alert(
+         "User criado com sucesso. Por favor acesse o console para ativar conta."
+       );
+
+       // Cria a URL de verificação
+       const verificationUrl = `http://localhost:8080/vanessa-vinicyus-proj3/rest/users/verifyAccount?token=${verificationToken}`;
+
+       // Exibe o link no console
+       console.log("Clique no link para ativar sua conta: ", verificationUrl);
      } catch (error) {
        alert("erro ao criar conta");
        console.error(error);
