@@ -66,7 +66,7 @@ function Login() {
             </AuthButton>
           </div>
           <div className="col-4 mb-2">
-            <AuthLink to="/create-account" outline>
+            <AuthLink to="/create-account" className={"btn-outline-primary w-100"}>
               Registar
             </AuthLink>
           </div>

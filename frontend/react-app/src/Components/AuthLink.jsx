@@ -1,12 +1,9 @@
-// components/AuthLink.jsx
+
 import { Link } from "react-router-dom";
 
-function AuthLink({ to, children, outline = false }) {
-  const classes = `btn ${
-    outline ? "btn-outline-primary" : "btn-primary"
-  } w-100`;
+function AuthLink({ to, children, className }) {
   return (
-    <Link to={to} className={classes}>
+    <Link to={to} className={`btn ${className}`}>
       {children}
     </Link>
   );

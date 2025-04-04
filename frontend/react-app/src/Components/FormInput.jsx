@@ -13,7 +13,7 @@ function FormInput({
         type={type}
         className="form-control"
         id={name}
-        name={name} // importante!
+        name={name} 
         value={value}
         onChange={onChange}
         placeholder={placeholder}
