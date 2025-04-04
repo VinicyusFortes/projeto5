@@ -37,6 +37,7 @@ export const Service = {
   }
 },
 
+
   //Funcao para realizar o login do user
   async loginUser(username, password) {
     try {
