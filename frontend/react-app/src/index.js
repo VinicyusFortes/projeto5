@@ -11,6 +11,7 @@ import Login from './Pages/Login';
 import Home from './Pages/Home';
 import CreateAccount from './Pages/CreateAccount';
 import Profile from './Pages/Profile';
+import ForgotPassword from './Pages/ForgotPasword';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -23,6 +24,7 @@ root.render(
         <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile/>} />
+        <Route path="/forgot-password" element={<ForgotPassword/>} />
       </Routes>
       <Footer />
     </Router>
