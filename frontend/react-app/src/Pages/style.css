@@ -3,6 +3,11 @@ a {
   text-decoration: none !important;
 }
 
+/* Utilities */
+.pointer {
+  cursor: pointer;
+}
+
 /* Criar-conta */
 .card { 
   max-Width: 600px;
