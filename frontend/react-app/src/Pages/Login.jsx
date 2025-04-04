@@ -5,6 +5,9 @@ import { useState } from "react";
 import { Service } from "../Services/Services";
 import FormInput from "../Components/FormInput";
 import AuthLayout from "../Components/AuthLayout";
+import AuthButton from "../Components/AuthButton";
+import AuthLink from "../Components/AuthLink";
+import AuthTextLink from "../Components/AuthTextLink";
 
 
 function Login() {
@@ -58,20 +61,22 @@ function Login() {
 
         <div className="row d-flex justify-content-center mt-4">
           <div className="col-4 mb-2">
-            <button type="submit" className="btn btn-primary w-100">
+            <AuthButton type="submit" className="btn-primary">
               Login
-            </button>
+            </AuthButton>
           </div>
           <div className="col-4 mb-2">
-            <a href="/create-account" className="btn btn-outline-primary w-100">
+            <AuthLink to="/create-account" outline>
               Registar
-            </a>
+            </AuthLink>
           </div>
         </div>
 
         <div className="row justify-content-center mt-2">
-          <div className="col-6 text-center">
-            <a href="/esqueceu-senha">Esqueceu sua senha?</a>
+          <div className="col-6">
+            <AuthTextLink to="/forgot-password">
+              Esqueceu sua senha?
+            </AuthTextLink>
           </div>
         </div>
       </form>
