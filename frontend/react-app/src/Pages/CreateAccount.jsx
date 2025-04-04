@@ -212,11 +212,11 @@ function CreateAccount() {
                   className="form-select"
                   id="userType"
                   name="userType"
-                  value={inputs.userType === "false" ? "normal" : "admin"}
+                  value={inputs.userType || ""}
                   onChange={handleChange}
                   required
                 >
-                  <option value="">Selecione...</option>
+                  <option value="" disabled>Selecione...</option>
                   <option value="admin">Administrador</option>
                   <option value="normal">Normal</option>
                 </select>

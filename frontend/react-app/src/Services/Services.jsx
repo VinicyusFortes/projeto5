@@ -93,8 +93,6 @@ export const Service = {
 
     if (response.ok) {
       alert("Conta verificada com sucesso!");
-      // Redirecionar para a página de login
-      window.location.href = "/login"; 
     } else {
       alert(data.message || "Erro ao verificar a conta.");
     }
