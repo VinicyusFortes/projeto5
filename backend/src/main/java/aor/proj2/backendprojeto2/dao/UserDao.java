@@ -78,6 +78,20 @@ public class UserDao extends AbstractDao<UserEntity> {
         em.remove(em.contains(userEntity) ? userEntity : em.merge(userEntity));
     }
 
+    //verifica se um user tem a conta verificada
+    public boolean isUserVerified(String username) {
+        try {
+            // Executa a named query para verificar se o usuário está verificado
+            UserEntity user = (UserEntity) em.createNamedQuery("User.findUserByUsernameAndVerified")
+                    .setParameter("username", username)
+                    .getSingleResult();
+            return user != null;  // Se o usuário for encontrado e estiver verificado, retorna true
+        } catch (NoResultException e) {
+            return false; // Se não encontrar o usuário ou se ele não estiver verificado, retorna false
+        }
+    }
+
+
 
     private UserEntity findOrCreateDefaultOwner() {
         // Verificar se o utilizador padrão já existe

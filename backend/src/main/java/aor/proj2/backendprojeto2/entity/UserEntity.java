@@ -11,6 +11,7 @@ import jakarta.persistence.*;
 @NamedQuery(name = "User.findUserByUsername", query = "SELECT u FROM UserEntity u WHERE u.username = :username")
 @NamedQuery(name = "User.findUserByToken", query = "SELECT DISTINCT u FROM UserEntity u WHERE u.token = :token")
 @NamedQuery(name="User.findUserByVerificationToken", query = "SELECT u FROM UserEntity u WHERE u.verificationToken = :token")
+@NamedQuery(name="User.findUserByUsernameAndVerified", query = "SELECT u FROM UserEntity  u WHERE u.username = :username and u.isVerified = true")
 public class UserEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;

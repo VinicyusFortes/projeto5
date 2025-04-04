@@ -201,6 +201,25 @@ public class RegisterUserService {
     }
   }
 
+  @GET
+  @Path("/verifyUser")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response checkUserVerified(@QueryParam("username") String username) {
+    try {
+      boolean isVerified = userDao.isUserVerified(username);
+
+      if (isVerified) {
+        return Response.status(Response.Status.OK).entity("Usuário verificado").build();
+      } else {
+        return Response.status(Response.Status.FORBIDDEN).entity("Conta não verificada").build();
+      }
+
+    } catch (Exception e) {
+      return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Erro ao verificar usuário").build();
+    }
+  }
+
+
 
 
 }
