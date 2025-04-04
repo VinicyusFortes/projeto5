@@ -88,7 +88,7 @@ function CreateAccount() {
        );
 
        // Cria a URL de verificação
-       const verificationUrl = `http://localhost:8080/vanessa-vinicyus-proj3/rest/users/verifyAccount?token=${verificationToken}`;
+       const verificationUrl = `http://localhost:8080/vanessa-vinicyus-proj3/rest/auth/verifyAccount?token=${verificationToken}`;
 
        // Exibe o link no console
        console.log("Clique no link para ativar sua conta: ", verificationUrl);

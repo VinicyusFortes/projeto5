@@ -5,7 +5,7 @@ export const Service = {
   //funcao para realizar logout
   async logout(token) {
     try {
-      const response = await fetch(`${BASE_URL}/users/logout`, {
+      const response = await fetch(`${BASE_URL}/auth/logout`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -26,7 +26,7 @@ export const Service = {
   //Funcao para realizar o login do user
   async loginUser(username, password) {
     try {
-      const response = await fetch(`${BASE_URL}/users/login`, {
+      const response = await fetch(`${BASE_URL}/auth/login`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -49,7 +49,7 @@ export const Service = {
   //Função para registrar um novo usuário
   async registerUser(userData) {
     try {
-      const response = await fetch(`${BASE_URL}/users/register`, {
+      const response = await fetch(`${BASE_URL}/auth/register`, {
         method: "POST",
         headers: {
           Accept: "*/*",
