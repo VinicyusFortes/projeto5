@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 
 // o bean é criado no início da requisição e destruído automaticamente no final da requisição.
 @RequestScoped
-@Path("/users")
+@Path("/auth")
 public class RegisterUserService {
 
   private static final Logger infoLogger = LogManager.getLogger("infoLogger");
@@ -157,12 +157,11 @@ public class RegisterUserService {
 
 
 
-  @POST
+  @GET
   @Path("/verifyAccount")
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   public Response verifyAccount(@QueryParam("token") String token) {
-    System.out.println(token);
     try {
       infoLogger.info("Verifying user account with token: " + token);
 

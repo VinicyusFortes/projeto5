@@ -52,10 +52,10 @@ public class UserEntity implements Serializable {
     @Column(name="token", nullable=true, unique = true, updatable = true)
     private String token;
 
-    @Column(name="verificationToken", nullable = false)
+    @Column(name="\"verificationToken\"", nullable = true)
     private String verificationToken;
 
-    @Column(name="tokenExpiration", nullable = false)
+    @Column(name="\"tokenExpiration\"", nullable = true)
     private LocalDateTime tokenExpiration;
 
 

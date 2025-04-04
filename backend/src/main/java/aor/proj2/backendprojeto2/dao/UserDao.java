@@ -32,7 +32,7 @@ public class UserDao extends AbstractDao<UserEntity> {
     //encontra o user através do token de verificacao
     public UserEntity findUserByVerificationToken(String token) {
         try {
-            return em.createNamedQuery("User.findUserByToken", UserEntity.class)
+            return em.createNamedQuery("User.findUserByVerificationToken", UserEntity.class)
                     .setParameter("token", token)
                     .getSingleResult();
         } catch (NoResultException e) {
