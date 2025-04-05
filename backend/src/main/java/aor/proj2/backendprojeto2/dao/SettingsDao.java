@@ -11,13 +11,5 @@ public class SettingsDao extends AbstractDao<SettingsEntity>{
     super(SettingsEntity.class);
   }
 
-  public SettingsEntity buscarConfiguracaoAtual() {
-    try {
-      return em.createQuery("SELECT s FROM Settings s", SettingsEntity.class)
-              .setMaxResults(1)
-              .getSingleResult();
-    } catch (Exception e) {
-      return null;
-    }
-  }
+
 }

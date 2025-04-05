@@ -6,6 +6,7 @@ import aor.proj2.backendprojeto2.entity.ProductEntity;
 import aor.proj2.backendprojeto2.entity.UserEntity;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -25,11 +26,15 @@ public class RegisterUserBean {
     @EJB
     private UserDao userDao;
 
+    @Inject
+    private SettingsBean settingsBean;
+
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     // Registar um novo utilizador
     public UserEntity registerUser(UserDto userDto) {
         infoLogger.info("Registering user: " + userDto.getUsername());
+        //verifica sse o username já existe
         if (userDao.findUserByUsername(userDto.getUsername()) != null) {
             errorLogger.error("Username already exists: " + userDto.getUsername());
             throw new IllegalArgumentException("Username já existe!");
@@ -38,16 +43,22 @@ public class RegisterUserBean {
         // Encripta a senha
         String hashedPassword = passwordEncoder.encode(userDto.getPassword());
 
-        // Converte o utilizador
+        // Converte o DTO -> UserEntity
         UserEntity userEntity = convertUserDtoToUserEntity(userDto);
         userEntity.setPassword(hashedPassword); // Armazena a senha encriptada
         userEntity.setDataCriacao(LocalDate.now());
         userEntity.setVerified(false);
 
-        //gerando o token de verificacao
+        //Gera o token de verificacao
         String verificationToken = generateNewToken();
         userEntity.setVerificationToken(verificationToken);
-        userEntity.setTokenExpiration(LocalDateTime.now().plusHours(24));
+
+        //obtem o tempo de validade atual de um token
+        int tokenExpirationMinutes = settingsBean.getTokenDuration();
+
+        //define o prazo de validade para o validation token
+        LocalDateTime tokenDuration = LocalDateTime.now().plusMinutes(tokenExpirationMinutes);
+        userEntity.setTokenExpiration(tokenDuration);
 
         userDao.persist(userEntity);
 
@@ -73,14 +84,13 @@ public class RegisterUserBean {
 
         UserEntity user = userDao.findUserByVerificationToken(token);
 
-        if (user == null || user.getTokenExpiration().isBefore(LocalDateTime.now())) {
+        if (user == null ) {
             errorLogger.warn("Invalid or expired token: " + token);
             return false;
         }
 
         user.setVerified(true);
         user.setVerificationToken(null);
-        user.setTokenExpiration(null);
         userDao.merge(user);
 
         infoLogger.info("User verified successfully: " + user.getEmail());
@@ -166,7 +176,6 @@ public class RegisterUserBean {
         userEntity.setToken(userDto.getToken());
         userEntity.setVerified(userDto.getIsVerified());
         userEntity.setVerificationToken(userDto.getVerificationToken());
-        userEntity.setTokenExpiration(userDto.getTokenExpiration());
         return userEntity;
     }
 
@@ -186,7 +195,6 @@ public class RegisterUserBean {
         userDto.setToken(userEntity.getToken());
         userDto.setIsVerified(userEntity.getIsVerified());
         userDto.setVerificationToken(userEntity.getVerificationToken());
-        userDto.setTokenExpiration(userEntity.getTokenExpiration());
         return userDto;
     }
 

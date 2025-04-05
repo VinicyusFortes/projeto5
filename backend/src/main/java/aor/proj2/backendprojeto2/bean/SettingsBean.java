@@ -1,13 +1,20 @@
 package aor.proj2.backendprojeto2.bean;
 
-import aor.proj2.backendprojeto2.dao.SettingsDao;
+
 import jakarta.ejb.Stateless;
-import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
 
 @Stateless
 public class SettingsBean {
-  @Inject
-  private SettingsDao settingsDao;
+  @PersistenceContext
+  private EntityManager em;
 
+  public int getTokenDuration() {
+    TypedQuery<Integer> query = em.createNamedQuery("Settings.findTokenExpiration", Integer.class);
+    Integer tokenExpirationMinutes = query.getSingleResult();
 
+    return tokenExpirationMinutes;
+  }
 }
