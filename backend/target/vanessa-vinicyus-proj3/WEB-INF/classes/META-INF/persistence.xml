@@ -11,6 +11,7 @@ https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
         <class>aor.proj2.backendprojeto2.entity.ProductEntity</class>
         <class>aor.proj2.backendprojeto2.entity.AutenticationEntity</class>
         <class>aor.proj2.backendprojeto2.entity.UserEntity</class>
+        <class>aor.proj2.backendprojeto2.entity.SettingsEntity</class>
 
         <properties>
             <!-- table generation policies: validate, update, create, crealte-drop -->
