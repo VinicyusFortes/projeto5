@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
+import Messages from "./Pages/Messages";
 
 import {
   BrowserRouter as Router,
@@ -23,7 +24,7 @@ const App = () => {
   // Define as rotas onde o Header/Footer NÃO devem aparecer
   const hideLayoutPaths = ["/login", "/create-account", "/forgot-password"];
 
-  
+
   const shouldHideLayout = hideLayoutPaths.includes(location.pathname);
 
   return (
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/messages" element={<Messages />} />
       </Routes>
       {!shouldHideLayout && <Footer />}
     </>
